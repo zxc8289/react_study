@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import Counter from "pages/Counter";
+import Main from "pages/Main";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const [num, setnum] = useState(0);
-  
-  const increase = () => setnum(num+1);
-
   return (
-  <>
-    <div>클릭수 {num}</div>
-    <div>
-      <button onClick={increase}>클릭</button>
-    </div>
-  </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/counter" element={<Counter />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
+ 
 export default App;
